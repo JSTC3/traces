@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Traces: a student web journal about my digital footprint.">
+  <title>Traces - a journal about my digital footprint</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <div id="progress" aria-hidden="true"></div>
+
+  <header>
+    <div class="column">
+      <a class="logo" href="index.html">traces<span aria-hidden="true">_</span></a>
+      <nav aria-label="Main">
+        <a href="index.html" class="active" aria-current="page">home</a>
+        <a href="pages/journal.html">journal</a>
+        <a href="pages/about.html">about</a>
+        <button id="theme-toggle" type="button" aria-label="Toggle dark mode">dark</button>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero" aria-label="Site introduction">
+    <div class="hero-inner">
+      <p class="hero-label" aria-hidden="true">// digital_footprint.log</p>
+      <h1 class="hero-title" aria-label="Traces">
+        <span class="typewriter" aria-hidden="true"></span>
+        <span class="cursor" aria-hidden="true">_</span>
+      </h1>
+      <p class="hero-sub">
+        Every click, photo and login leaves something behind.<br>
+        This is a journal about what I found when I started looking.
+      </p>
+      <a class="hero-cta" href="#entries">read the journal ↓</a>
+    </div>
+    <canvas class="hero-canvas" aria-hidden="true"></canvas>
+  </section>
+
+  <main id="main" class="column">
+    <h2 id="entries">Entries</h2>
+    <ul class="entry-list">
+      <li>
+        <time datetime="2026-10-26">26 Oct 2026</time>
+        <a class="title" href="pages/journal.html#entry-1">01 / Two kinds of footprint</a>
+        <p>What I leave on purpose, and what gets collected without asking.</p>
+      </li>
+      <li>
+        <time datetime="2026-10-27">27 Oct 2026</time>
+        <a class="title" href="pages/journal.html#entry-2">02 / The photo that knew where I was</a>
+        <p>A harmless picture, and the hidden data inside it.</p>
+      </li>
+      <li>
+        <time datetime="2026-10-28">28 Oct 2026</time>
+        <a class="title" href="pages/journal.html#entry-3">03 / The accounts I forgot</a>
+        <p>Old sign-ups never disappear. They just wait.</p>
+      </li>
+      <li>
+        <time datetime="2026-10-29">29 Oct 2026</time>
+        <a class="title" href="pages/journal.html#entry-4">04 / Small steps</a>
+        <p>What I changed, and what I decided not to worry about.</p>
+      </li>
+    </ul>
+  </main>
+
+  <footer>
+    <div class="column">Traces - a student web journal, 2026.</div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
