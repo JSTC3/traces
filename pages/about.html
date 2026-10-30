@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Why I wrote Traces, a day of traces, sources, and a contact form.">
+  <title>About - Traces</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <div id="progress" aria-hidden="true"></div>
+
+  <header>
+    <div class="column">
+      <a class="logo" href="../index.html">traces<span aria-hidden="true">_</span></a>
+      <nav aria-label="Main">
+        <a href="../index.html">home</a>
+        <a href="journal.html">journal</a>
+        <a href="about.html" class="active" aria-current="page">about</a>
+        <button id="theme-toggle" type="button" aria-label="Toggle dark mode">dark</button>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="column">
+    <h1>About</h1>
+
+    <p>
+      I am a student in cybersecurity. I realised I talk about protecting
+      systems but rarely look at my own data. This journal is the result of
+      one week of paying attention to it. There are no quizzes and no tools here,
+      only observations written down as I went.
+    </p>
+
+    <h2>A day of traces</h2>
+    <p>A normal day, and what each moment can leave behind:</p>
+
+    <ul class="timeline">
+      <li><strong>07:00</strong> - I unlock my phone. Device model, time and network are recorded.</li>
+      <li><strong>09:00</strong> - I search for something. The query is stored by the search engine.</li>
+      <li><strong>12:30</strong> - I take a photo. Date, time and maybe location go into the file.</li>
+      <li><strong>16:00</strong> - I sign up for a free service. My email lands in a new database.</li>
+      <li><strong>22:00</strong> - I scroll a feed. Every pause tells the platform what I like.</li>
+    </ul>
+
+    <h2>Sources and further reading</h2>
+    <ul>
+      <li>Have I Been Pwned (haveibeenpwned.com) - check if an email appeared in a data breach.</li>
+      <li>EFF Cover Your Tracks (coveryourtracks.eff.org) - see how trackable your browser is.</li>
+      <li>EXIF metadata - the standard that lets photos store date, device and location.</li>
+    </ul>
+
+    <h2>How this site is built</h2>
+    <p>
+      Three HTML pages, one CSS file and one JavaScript file. The script does
+      three things: it switches between light and dark mode (and remembers the choice),
+      it draws a progress bar while you read, and it answers the form below.
+    </p>
+
+    <h2 id="contact-title">Leave a trace</h2>
+    <p>A thought about the journal? Write it here.</p>
+
+    <form id="contact-form" aria-labelledby="contact-title">
+      <div class="field">
+        <label for="name">Name</label>
+        <input id="name" name="name" type="text" required minlength="2" maxlength="40" autocomplete="name">
+      </div>
+
+      <div class="field">
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" required autocomplete="email">
+      </div>
+
+      <div class="field">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="5" required minlength="10" maxlength="500" aria-describedby="count-hint"></textarea>
+        <p class="hint" id="count-hint"><span id="count">0</span> / 500 characters (10 minimum)</p>
+      </div>
+
+      <button type="submit">Send</button>
+      <p id="form-status" role="status"></p>
+    </form>
+  </main>
+
+  <footer>
+    <div class="column">Traces - a student web journal, 2026.</div>
+  </footer>
+
+  <script src="../js/script.js"></script>
+</body>
+</html>
