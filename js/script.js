@@ -61,7 +61,7 @@ if (form) {                                      // other pages have no form
   });
 }
 
-/* ---------- FEATURE 4: HERO (index page only) ---------- */
+/* ---------- FEATURE 4: HERO TYPEWRITER (index page only) ---------- */
 
 /* -- Typewriter -- */
 const typeTarget = document.querySelector(".typewriter");
@@ -81,88 +81,3 @@ if (typeTarget) {
   setTimeout(type, 600); // wait for label fade-in
 }
 
-/* -- Canvas particle field -- */
-const heroCanvas = document.querySelector(".hero-canvas");
-
-if (heroCanvas) {
-  const ctx = heroCanvas.getContext("2d");
-
-  // Resize canvas to fill the hero section
-  function resizeCanvas() {
-    heroCanvas.width  = heroCanvas.offsetWidth;
-    heroCanvas.height = heroCanvas.offsetHeight;
-  }
-  resizeCanvas();
-  window.addEventListener("resize", () => { resizeCanvas(); initParticles(); });
-
-  // Read the accent color from CSS variables
-  function accentColor() {
-    return getComputedStyle(document.documentElement)
-      .getPropertyValue("--accent").trim();
-  }
-
-  const PARTICLE_COUNT = 55;
-  let particles = [];
-
-  function initParticles() {
-    particles = Array.from({ length: PARTICLE_COUNT }, () => ({
-      x: Math.random() * heroCanvas.width,
-      y: Math.random() * heroCanvas.height,
-      vx: (Math.random() - 0.5) * 0.35,
-      vy: (Math.random() - 0.5) * 0.35,
-      r: Math.random() * 1.8 + 0.6,
-    }));
-  }
-  initParticles();
-
-  const LINK_DIST = 110;   // pixels — nodes closer than this get a connecting line
-
-  function drawFrame() {
-    ctx.clearRect(0, 0, heroCanvas.width, heroCanvas.height);
-    const color = accentColor();
-
-    // Move and wrap particles
-    for (const p of particles) {
-      p.x += p.vx;
-      p.y += p.vy;
-      if (p.x < 0) p.x = heroCanvas.width;
-      if (p.x > heroCanvas.width)  p.x = 0;
-      if (p.y < 0) p.y = heroCanvas.height;
-      if (p.y > heroCanvas.height) p.y = 0;
-    }
-
-    // Draw connecting lines
-    for (let i = 0; i < particles.length; i++) {
-      for (let j = i + 1; j < particles.length; j++) {
-        const dx = particles[i].x - particles[j].x;
-        const dy = particles[i].y - particles[j].y;
-        const dist = Math.sqrt(dx * dx + dy * dy);
-        if (dist < LINK_DIST) {
-          ctx.beginPath();
-          ctx.moveTo(particles[i].x, particles[i].y);
-          ctx.lineTo(particles[j].x, particles[j].y);
-          ctx.strokeStyle = color;
-          ctx.globalAlpha = 1 - dist / LINK_DIST;
-          ctx.lineWidth = 0.6;
-          ctx.stroke();
-        }
-      }
-    }
-
-    // Draw nodes
-    ctx.globalAlpha = 1;
-    for (const p of particles) {
-      ctx.beginPath();
-      ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-      ctx.fillStyle = color;
-      ctx.fill();
-    }
-
-    requestAnimationFrame(drawFrame);
-  }
-
-  drawFrame();
-
-  // Re-sync particle color when theme toggles
-  toggle.addEventListener("click", () => {}); // canvas reads CSS vars live — no extra work needed
-}
