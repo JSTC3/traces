@@ -1,125 +1,420 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="The four journal entries of Traces.">
-  <title>Journal - Traces</title>
+  <meta name="description" content="Four reflections on digital footprints, privacy, metadata and online identity.">
+  <meta name="theme-color" content="#f4f2ed">
+
+  <title>Journal — Traces</title>
+
   <link rel="stylesheet" href="../css/style.css">
+
+  <style>
+    .journal-intro {
+      max-width: 650px;
+      margin: 30px 0 65px;
+    }
+
+    .journal-intro p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+    }
+
+    .entry-image {
+      margin: 25px 0;
+      width: 100%;
+      overflow: hidden;
+    }
+
+    .entry-image img {
+      display: block;
+      width: 100%;
+      height: 380px;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+
+    .entry-image a {
+      display: block;
+      overflow: hidden;
+    }
+
+    .entry-image a:hover img {
+      transform: scale(1.025);
+    }
+
+    .entry-image figcaption {
+      margin-top: 10px;
+      font-size: 0.75rem;
+      opacity: 0.65;
+      letter-spacing: 0.04em;
+    }
+
+    article {
+      margin-bottom: 100px;
+      max-width: 850px;
+    }
+
+    article h2 {
+      margin-top: 12px;
+    }
+
+    article p {
+      line-height: 1.9;
+      max-width: 750px;
+    }
+
+    .entry-number {
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      opacity: 0.6;
+    }
+
+    .cause {
+      margin-top: 25px;
+      font-family: monospace;
+    }
+
+    .journal-end {
+      padding: 50px 0;
+      border-top: 1px solid currentColor;
+      margin-top: 30px;
+    }
+
+    @media (max-width: 600px) {
+      .entry-image img {
+        height: 240px;
+      }
+
+      article {
+        margin-bottom: 65px;
+      }
+
+      .journal-intro {
+        margin-bottom: 40px;
+      }
+    }
+  </style>
 </head>
+
 <body>
+
   <a class="skip" href="#main">Skip to content</a>
+
   <div id="progress" aria-hidden="true"></div>
 
   <header>
     <div class="column">
-      <a class="logo" href="../index.html">traces<span aria-hidden="true">_</span></a>
-      <nav aria-label="Main">
+
+      <a class="logo" href="../index.html">
+        traces<span aria-hidden="true">_</span>
+      </a>
+
+      <nav aria-label="Main navigation">
         <a href="../index.html">home</a>
         <a href="journal.html" class="active" aria-current="page">journal</a>
         <a href="about.html">about</a>
-        <button id="theme-toggle" type="button" aria-label="Toggle dark mode">dark</button>
+
+        <button
+          id="theme-toggle"
+          type="button"
+          aria-label="Toggle dark mode">
+          dark
+        </button>
       </nav>
+
     </div>
   </header>
 
+
   <main id="main" class="column">
-    <h1>Journal</h1>
+
+    <section class="journal-intro">
+
+      <span class="entry-number">PERSONAL JOURNAL / 2026</span>
+
+      <h1>Journal<span aria-hidden="true">.</span></h1>
+
+      <p>
+        Four observations about the information we leave behind.
+        From the photographs we take to the accounts we forget,
+        our digital lives tell stories we do not always intend to share.
+      </p>
+
+      <p class="entry-number">
+        04 ENTRIES — 26 OCT / 29 OCT 2026
+      </p>
+
+    </section>
+
+
+    <!-- ENTRY 01 -->
 
     <article id="entry-1">
-      <time datetime="2026-10-26">26 Oct 2026</time>
+
+      <time datetime="2026-10-26">26 October 2026</time>
+
       <h2>01 / Two kinds of footprint</h2>
+
+      <figure class="entry-image">
+
+        <a
+          href="https://unsplash.com/s/photos/digital-privacy"
+          target="_blank"
+          rel="noopener noreferrer">
+
+          <img
+            src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=1200&auto=format&fit=crop&q=85"
+            alt="Person working at a laptop, representing everyday digital activity."
+            loading="lazy"
+            width="1200"
+            height="800">
+        </a>
+
+        <figcaption>
+          FIG 01 — THE INVISIBLE SIDE OF BEING ONLINE.
+          PHOTO COLLECTION: UNSPLASH.
+        </figcaption>
+
+      </figure>
+
       <p>
-        I used to think my digital footprint was my social media: the posts, the
-        profile picture, the comments. That is only half of it. Researchers split
-        it in two. The <strong>active footprint</strong> is everything I share on
-        purpose: a post, an email, a form I fill in.
+        I used to think my digital footprint was my social media:
+        the posts, the profile picture, the comments. That is only
+        half of it. Researchers split it in two.
+        The <strong>active footprint</strong> is everything I share
+        on purpose: a post, an email, a form I fill in.
       </p>
+
       <p>
-        The <strong>passive footprint</strong> is everything collected while I
-        do nothing special: my IP address, the pages I visit, how long I stay,
-        the device I use, the cookies a site stores in my browser. I never typed
-        any of it, yet it forms a surprisingly accurate picture of my habits.
+        The <strong>passive footprint</strong> is everything collected
+        while I do nothing special: my IP address, the pages I visit,
+        how long I stay, the device I use, the cookies a site stores
+        in my browser. I never typed any of it, yet it forms a
+        surprisingly accurate picture of my habits.
       </p>
+
       <p>
-        What bothered me most is the imbalance. I can delete a post in one click,
-        but I cannot easily see, let alone delete, what was recorded about me in
-        the background.
+        What bothered me most is the imbalance. I can delete a post
+        in one click, but I cannot easily see, let alone delete,
+        what was recorded about me in the background.
       </p>
-      <p class="cause">// lesson: the footprint I can see is the smaller one.</p>
+
+      <p class="cause">
+        // lesson: the footprint I can see is the smaller one.
+      </p>
+
     </article>
+
+
+    <!-- ENTRY 02 -->
 
     <article id="entry-2">
-      <time datetime="2026-10-27">27 Oct 2026</time>
+
+      <time datetime="2026-10-27">27 October 2026</time>
+
       <h2>02 / The photo that knew where I was</h2>
+
+      <figure class="entry-image">
+
+        <a
+          href="https://unsplash.com/s/photos/photography-camera"
+          target="_blank"
+          rel="noopener noreferrer">
+
+          <img
+            src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=1200&auto=format&fit=crop&q=85"
+            alt="Digital camera and photography equipment."
+            loading="lazy"
+            width="1200"
+            height="800">
+        </a>
+
+        <figcaption>
+          FIG 02 — EVERY PHOTOGRAPH HAS A STORY BEYOND THE IMAGE.
+          PHOTO COLLECTION: UNSPLASH.
+        </figcaption>
+
+      </figure>
+
       <p>
         Most photos taken with a phone carry hidden text called
-        <strong>EXIF metadata</strong>. It can include the date and time, the phone
-        model, and, if location is enabled, the GPS coordinates of where the picture
-        was taken. The image looks innocent. The file is talkative.
+        <strong>EXIF metadata</strong>. It can include the date and time,
+        the phone model, and, if location is enabled, the GPS coordinates
+        of where the picture was taken. The image looks innocent.
+        The file is talkative.
       </p>
+
       <p>
-        Many big platforms strip this data when you upload, but not all of them,
-        and not when a photo is sent as a raw file or posted on a small forum.
-        A picture of my desk could, in theory, tell a stranger where my desk is.
+        Many big platforms strip this data when you upload, but not
+        all of them, and not when a photo is sent as a raw file or
+        posted on a small forum. A picture of my desk could, in theory,
+        tell a stranger where my desk is.
       </p>
+
       <p>
-        I checked my own camera settings and turned off location tagging for the
-        camera app. It took ten seconds. It is the cheapest privacy fix I found.
+        I checked my own camera settings and turned off location
+        tagging for the camera app. It took ten seconds.
+        It is the cheapest privacy fix I found.
       </p>
-      <p class="cause">// lesson: a file can say more than the thing it shows.</p>
+
+      <p class="cause">
+        // lesson: a file can say more than the thing it shows.
+      </p>
+
     </article>
+
+
+    <!-- ENTRY 03 -->
 
     <article id="entry-3">
-      <time datetime="2026-10-28">28 Oct 2026</time>
+
+      <time datetime="2026-10-28">28 October 2026</time>
+
       <h2>03 / The accounts I forgot</h2>
+
+      <figure class="entry-image">
+
+        <a
+          href="https://unsplash.com/s/photos/password-security"
+          target="_blank"
+          rel="noopener noreferrer">
+
+          <img
+            src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1200&auto=format&fit=crop&q=85"
+            alt="Laptop displaying a development environment, representing online accounts and stored information."
+            loading="lazy"
+            width="1200"
+            height="800">
+        </a>
+
+        <figcaption>
+          FIG 03 — OLD ACCOUNTS, OLD DATA, NEW RISKS.
+          PHOTO COLLECTION: UNSPLASH.
+        </figcaption>
+
+      </figure>
+
       <p>
-        I tried to list every account I have ever created. I stopped counting
-        because I kept remembering new ones: a game forum, a free trial, a shop
-        I used once. Each one holds an email address, often a password, sometimes
-        a birth date or a phone number.
+        I tried to list every account I have ever created.
+        I stopped counting because I kept remembering new ones:
+        a game forum, a free trial, a shop I used once.
+        Each one holds an email address, often a password,
+        sometimes a birth date or a phone number.
       </p>
+
       <p>
-        Forgotten accounts are a quiet risk. If a small website is breached
-        years later, my old data leaks even though I never use it. And if I
-        reused the same password, one old leak can open newer doors.
+        Forgotten accounts are a quiet risk. If a small website
+        is breached years later, my old data leaks even though
+        I never use it. And if I reused the same password,
+        one old leak can open newer doors.
       </p>
+
       <p>
-        A good habit is to check my email address on a breach-notification service
-        such as Have I Been Pwned, then delete the accounts I no longer need.
+        A good habit is to check my email address on a
+        breach-notification service such as
+        <a href="https://haveibeenpwned.com/"
+           target="_blank"
+           rel="noopener noreferrer">
+          Have I Been Pwned
+        </a>,
+        then delete the accounts I no longer need.
         Deleting is boring work, but it shrinks the footprint for good.
       </p>
-      <p class="cause">// lesson: data does not expire, only my attention does.</p>
+
+      <p class="cause">
+        // lesson: data does not expire, only my attention does.
+      </p>
+
     </article>
 
+
+    <!-- ENTRY 04 -->
+
     <article id="entry-4">
-      <time datetime="2026-10-29">29 Oct 2026</time>
+
+      <time datetime="2026-10-29">29 October 2026</time>
+
       <h2>04 / Small steps</h2>
+
+      <figure class="entry-image">
+
+        <a
+          href="https://unsplash.com/s/photos/digital-security"
+          target="_blank"
+          rel="noopener noreferrer">
+
+          <img
+            src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=1200&auto=format&fit=crop&q=85"
+            alt="Close-up of electronic circuit components on a printed circuit board."
+            loading="lazy"
+            width="1200"
+            height="800">
+        </a>
+
+        <figcaption>
+          FIG 04 — BUILDING BETTER DIGITAL HABITS.
+          PHOTO COLLECTION: UNSPLASH.
+        </figcaption>
+
+      </figure>
+
       <p>
-        I will never have a zero footprint, and I do not think that is the goal.
-        Being online has real value. The goal is to choose what I leave behind
-        instead of leaving everything by default.
+        I will never have a zero footprint, and I do not think
+        that is the goal. Being online has real value.
+        The goal is to choose what I leave behind instead of
+        leaving everything by default.
       </p>
+
       <p>
-        My short list: use a different password for every account (with a
-        password manager), turn off location tagging on photos, review the privacy
-        settings of the apps I use most, and delete accounts I have not opened in
-        a year. Before posting, I ask one question: <em>would I be fine with this
-        being found in five years?</em>
+        My short list: use a different password for every account
+        (with a password manager), turn off location tagging on photos,
+        review the privacy settings of the apps I use most,
+        and delete accounts I have not opened in a year.
+        Before posting, I ask one question:
+        <em>would I be fine with this being found in five years?</em>
       </p>
+
       <p>
-        Traces cannot be erased completely, but they can be managed. That is
-        enough to start.
+        Traces cannot be erased completely, but they can be managed.
+        That is enough to start.
       </p>
-      <p class="cause">// lesson: choose your traces, do not just leave them.</p>
+
+      <p class="cause">
+        // lesson: choose your traces, do not just leave them.
+      </p>
+
     </article>
+
+
+    <section class="journal-end">
+
+      <span class="entry-number">END OF JOURNAL / 001</span>
+
+      <h2>Everything leaves a trace.</h2>
+
+      <p>
+        The question is not whether you leave one.
+        It is what you choose to leave behind.
+      </p>
+
+      <a href="../index.html">← Back to home</a>
+
+    </section>
 
   </main>
 
+
   <footer>
-    <div class="column">Traces - a student web journal, 2026.</div>
+    <div class="column">
+      Traces — a student web journal, 2026.
+    </div>
   </footer>
 
+
   <script src="../js/script.js"></script>
+
 </body>
 </html>
